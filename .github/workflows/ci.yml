@@ -69,7 +69,7 @@ jobs:
       # checkout code
       - uses: actions/checkout@v4
 #      # authenticate with GCP with workload identity provider
-     - uses: 'google-github-actions/auth@v2'
+      - uses: 'google-github-actions/auth@v2'
        id: auth
        name: Authenticate to GCP
        with:
@@ -77,17 +77,17 @@ jobs:
          workload_identity_provider: 'projects/55953200222/locations/global/workloadIdentityPools/github/providers/my-repo'
 
 #      # configure/login with docker
-     - name: gcloud Configure Docker
+      - name: gcloud Configure Docker
        run: gcloud auth configure-docker northamerica-northeast1-docker.pkg.dev
 
 #      # setup docker buildx
-     - name: Setup docker buildx
+      - name: Setup docker buildx
        uses: docker/setup-buildx-action@v3
        with:
          platforms: linux/amd64,linux/arm64
 
 #      # build and push the image
-     - name: Build and Push
+      - name: Build and Push
        uses: docker/build-push-action@v6
        with:
          context: ./
