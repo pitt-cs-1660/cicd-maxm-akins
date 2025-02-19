@@ -67,24 +67,24 @@ jobs:
       - integration-test
     steps:
       - uses: actions/checkout@v4
-      - uses: 'google-github-actions/auth@v2'
-       id: auth
-      - name: Authenticate to GCP
-       with:
-         project_id: 'cs1660-2-451314'
-         workload_identity_provider: 'projects/55953200222/locations/global/workloadIdentityPools/github/providers/my-repo'
+      - uses: "google-github-actions/auth@v2"
+        id: auth
+        name: Authenticate to GCP
+        with:
+          project_id: "cs1660-2-451314"
+          workload_identity_provider: "projects/55953200222/locations/global/workloadIdentityPools/github/providers/my-repo"
       - name: gcloud Configure Docker
-       run: gcloud auth configure-docker northamerica-northeast1-docker.pkg.dev
+        run: gcloud auth configure-docker northamerica-northeast1-docker.pkg.dev
 
       - name: Setup docker buildx
-       uses: docker/setup-buildx-action@v3
-       with:
-         platforms: linux/amd64,linux/arm64
+        uses: docker/setup-buildx-action@v3
+        with:
+          platforms: linux/amd64,linux/arm64
 
       - name: Build and Push
-       uses: docker/build-push-action@v6
-       with:
-         context: ./
-         file: ./Dockerfile
-         push: true
-         tags: northamerica-northeast1-docker.pkg.dev/cs1660-2-451314/repo-2:latest
+        uses: docker/build-push-action@v6
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: northamerica-northeast1-docker.pkg.dev/cs1660-2-451314/repo-2:latest
