@@ -87,4 +87,4 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: northamerica-northeast1-docker.pkg.dev/cs1660-2-451314/repo-2:latest
+          tags: northamerica-northeast1-docker.pkg.dev/pitt-cs-1660/cicd-maxm-akins
