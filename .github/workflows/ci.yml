@@ -87,4 +87,4 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: northamerica-northeast1-docker.pkg.dev/cs1660-2-451314/repo-2
+          tags: northamerica-northeast1-docker.pkg.dev/cs1660-2-451314/repo-2/fastapi:latest
