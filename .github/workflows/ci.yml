@@ -71,8 +71,8 @@ jobs:
         id: auth
         name: Authenticate to GCP
         with:
-          # project_id: "cs1660-2-451314"
-          service_account: "my-service-account@cs1660-2-451314.iam.gserviceaccount.com"
+          project_id: "cs1660-2-451314"
+          # service_account: "my-service-account@cs1660-2-451314.iam.gserviceaccount.com"
           workload_identity_provider: "projects/55953200222/locations/global/workloadIdentityPools/github2/providers/my-repo"
       - name: gcloud Configure Docker
         run: gcloud auth configure-docker northamerica-northeast1-docker.pkg.dev
