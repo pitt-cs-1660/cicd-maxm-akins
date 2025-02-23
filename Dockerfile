@@ -16,11 +16,4 @@ CMD ["uvicorn", "cc_compose.server:app", "--reload", "--host", "0.0.0.0", "--por
 
 
 
-
-
-
-
-
-
-
 #subject to email if need help: Th!sAssignment2
